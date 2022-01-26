@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="#">
     <meta name="author" content="Le Borgne Maylis">
-    <title>Jeux</title>
+    <title>Jeux de Dé</title>
     <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
@@ -18,11 +18,11 @@
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <h4 class="text-white">Les règles du jeux</h4>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
+                    <span class="text-muted">Voici les règles du jeux</span>
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark">
-                <h1>Titre</h1>
+                <h1>Le Jeux de Dé</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -33,31 +33,37 @@
         </div>
     </header>
     <main>
-        <div class="container text-center">
+        <button class="btn btn-primary" id="play">Lancer la partie</button>
+        <div class="container text-center" id=game hidden>
             <div class="row">
                 <div class="col">
+
                     <h2>Joueur 1</h2>
+                    <p id="player1"></p>
                     <div>
-                        <h5>Score Courant</h5>
+                        <h5 id=round1>Score Courant</h5>
                     </div>
-                    <h5>Score</h5>
+                    <h5 id=global1>Score</h5>
                 </div>
                 <div class="col">
                     <h2>Joueur 2</h2>
+                    <p id="player2"></p>
                     <div>
-                        <h5>Score Courant</h5>
+                        <h5 id="round2">Score Courant</h5>
                     </div>
-                    <h5>Score</h5>
+                    <h5 id="global2">Score</h5>
                 </div>
             </div>
+
+            <button class="btn btn-primary" id="roledice">Lancer le dé</button>
+            <button class="btn btn-primary" id="hold">Sécuriser</button>
+            <a href="#" id="newgame">Nouvelle Partie</a>
         </div>
-        <button class="btn btn-primary">Lancer le dé</button>
-        <button class="btn btn-primary">Sécuriser</button>
-        <a href="#">Nouvelle Partie</a>
+
     </main>
     <footer></footer>
     <script src="bootstrap.bundle.min.js"></script>
-    <script src="jquery-3.6.0.js"></script>
+    <script src="utils/function.js"></script>
 </body>
 
 </html>
