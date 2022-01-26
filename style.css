@@ -8,3 +8,26 @@
 h1 {
     color: aliceblue;
 }
+
+/* Main */
+
+html{
+    text-align: center;
+    box-sizing: border-box;
+}
+#play{
+    margin: 2rem;
+    background-color: brown;
+    border-radius: 1px solid brown;
+    color: rgb(218, 218, 218);
+}
+#roledice, #hold {
+    margin: 1.5rem;
+    border-radius: 0.8em;
+    background-color: brown;
+    border-radius: 1px solid brown;
+}
+#newgame{
+    margin: 2rem;
+    display: block;
+}

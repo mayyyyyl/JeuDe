@@ -2,6 +2,7 @@
 const hold = document.getElementById("hold");
 const roledice = document.getElementById("roledice");
 const play = document.getElementById("play");
+const newgame = document.getElementById("newgame");
 
 class player {
     constructor(pseudo) {
@@ -15,6 +16,10 @@ let player2 = new player(this.pseudo);
 
 play.addEventListener('click', () => {
     getName();
+});
+
+newgame.addEventListener('click', () => {
+    startNewGame();
 });
 
 /* Choisir son nom */
@@ -40,7 +45,14 @@ function getName() {
     pseudo_player1.textContent = player1.pseudo
     pseudo_player2.textContent = player2.pseudo
     game.removeAttribute("hidden");
+    play.setAttribute("disabled", "disabled");
 }
+
+function startNewGame() {
+    play.removeAttribute("disabled");
+    game.setAttribute("hidden", "hidden");
+}
+
 
 
 // function myStopFunction() {
