@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="#">
     <meta name="author" content="Le Borgne Maylis">
-    <title>Jeux de Dé</title>
-    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Jeu de Dé</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -17,12 +17,25 @@
         <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
-                    <h4 class="text-white">Les règles du jeux</h4>
-                    <span class="text-muted">Voici les règles du jeux</span>
+                    <h4 class="text-white">Les règles du jeu</h4>
+                    <p class="text-muted">
+                        <br>
+                        Vous possédez deux scores, un score temporaire et un score global
+                        <br>
+                        Chacun votre tour, vous pourrez lancer le dé autant de fois que vous le souhaitez.<br>
+                        <br>
+                        À tout moment, vous pouvez envoyer votre score temporaire vers votre score global avec le bouton
+                        SECURISER. Ce sera alors au tour de l’autre joueur.<br>
+                        <br>
+                        Si le lancé obtenu est 1, le score temporaire est perdu et ce sera au tour de votre
+                        adversaire de jouer.<br>
+                        <br>
+                        Le premier à 100 POINTS gagne !<br>
+                    </p>
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark">
-                <h1>Le Jeux de Dé</h1>
+                <h1>Le Jeu de Dé</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +76,7 @@
 
     </main>
     <footer></footer>
-    <script src="bootstrap.bundle.min.js"></script>
+    <script src="utils/bootstrap.bundle.min.js"></script>
     <script src="utils/function.js"></script>
 </body>
 

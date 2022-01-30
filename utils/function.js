@@ -54,7 +54,6 @@ function startNewGame() {
 }
 
 
-
 // function myStopFunction() {
 //     clearInterval(myInterval);
 // }
@@ -79,4 +78,3 @@ function startNewGame() {
 // }
 
 // img.addEventListener("click", toggleStatus);
-

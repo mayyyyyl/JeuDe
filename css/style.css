@@ -1,19 +1,23 @@
 /* Feuille de style */
 
 /* Style de police */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 /* Header */
 
 h1 {
     color: aliceblue;
 }
+nav{
+    padding: 4.5em;
+}
 
 /* Main */
 
-html{
+* {
     text-align: center;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 #play{
     margin: 2rem;
