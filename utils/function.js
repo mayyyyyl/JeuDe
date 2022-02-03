@@ -50,17 +50,20 @@ function getName() {
         }
     } catch (Error) {
         window.alert('Les noms de joueurs doivent êtres différents et non vides.')
-        getName();
+        return "erreur";
+
     }
     pseudo_player1.textContent = player1.pseudo
     pseudo_player2.textContent = player2.pseudo
     game.removeAttribute("hidden");
     play.setAttribute("disabled", "disabled");
+    play.setAttribute("hidden", "hidden");
 }
 
 /* Commencer une nouvelle partie*/
 function startNewGame() {
     play.removeAttribute("disabled");
+    play.removeAttribute("hidden");
     game.setAttribute("hidden", "hidden");
 }
 

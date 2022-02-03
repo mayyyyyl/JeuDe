@@ -18,6 +18,16 @@ nav{
     text-align: center;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    
+
+}
+html, body, main{
+    height: 100%;
+    width: 100%;
+}
+main{
+    background-image: url("/img/background.jpg");
+    background-size: cover;
 }
 #play{
     margin: 2rem;
