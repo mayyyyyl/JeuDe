@@ -10,6 +10,7 @@
     <title>Jeu de Dé</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/img/dice.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -48,21 +49,25 @@
     <main>
         <button class="btn btn-primary btn-lg" id="play">Lancer la partie</button>
         <div class="container text-center" id=game hidden>
+            <button class="btn btn-primary btn-lg" id="newgame">Nouvelle partie</button>
             <div class="row">
                 <div class="col">
-
+                    <div id="circle1"></div>
                     <h2 id="player1"></h2>
-                    <div>
-                        <h5 id=round1>Courant</h5>
+                    <h5 id=global1></h5>
+                    <div class="badge">
+                        <h5>Courant</h5>
+                        <p id=round1></p>
                     </div>
-                    <h5 id=global1>Glodal</h5>
                 </div>
-                <div class="col">
+                <div class="col" id="col1">
+                    <div id="circle2"></div>
                     <h2 id="player2"></h2>
-                    <div>
-                        <h5 id="round2">Courant</h5>
+                    <h5 id="global2"></h5>
+                    <div class="badge">
+                        <h5>Courant</h5>
+                        <p id=round2></p>
                     </div>
-                    <h5 id="global2">Glodal</h5>
                 </div>
             </div>
 
@@ -70,7 +75,6 @@
             <button class="btn btn-primary" id="roledice">Lancer le dé</button>
             <button class="btn btn-primary" id="hold">Sécuriser</button>
 
-            <a href="#" id="newgame">Nouvelle Partie</a>
         </div>
 
     </main>

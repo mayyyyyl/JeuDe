@@ -2,6 +2,8 @@ const hold = document.getElementById("hold");
 const roledice = document.getElementById("roledice");
 const play = document.getElementById("play");
 const newgame = document.getElementById("newgame");
+const circle1 = document.getElementById("circle1");
+const circle2 = document.getElementById("circle2");
 
 /* Classe joueur*/
 class player {
@@ -58,6 +60,7 @@ function getName() {
     game.removeAttribute("hidden");
     play.setAttribute("disabled", "disabled");
     play.setAttribute("hidden", "hidden");
+    circle2.setAttribute("hidden", "hidden");
 }
 
 /* Commencer une nouvelle partie*/
@@ -76,10 +79,9 @@ let turn = 0;
 /* Lancer de dé*/
 function rollDice() {
 
-    let currentPlayer = players[turn];
+    players[turn];
 
     diceNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(diceNumber);
 
     if (diceNumber == 1) {
 
@@ -95,16 +97,19 @@ function rollDice() {
     }
 
     return document.getElementById("diceNumber").innerHTML = diceNumber,
-        document.getElementById("round1").innerHTML = "Courant : " + score[0],
-        document.getElementById("round2").innerHTML = "Courant : " + score[1];
+        document.getElementById("round1").innerHTML = score[0],
+        document.getElementById("round2").innerHTML = score[1];
 }
 
+/* Sauver son score */
 function holdscore() {
 
     scoreglobal[turn] += score[turn];
 
     if (scoreglobal[turn] >= 100) {
-        console.log("Vous avez gagné !!!!!!!");
+        return document.getElementById("global1").innerHTML = scoreglobal[0],
+            document.getElementById("global2").innerHTML = scoreglobal[1],
+            window.alert("Vous avez gagné !!!!!!!");
     }
 
     score[turn] = 0;
@@ -112,6 +117,8 @@ function holdscore() {
     if (turn == players.length) {
         turn = 0;
     }
-    return document.getElementById("global1").innerHTML = "Global : " + scoreglobal[0],
-        document.getElementById("global2").innerHTML = "Global : " + scoreglobal[1];
+    return document.getElementById("global1").innerHTML = scoreglobal[0],
+        document.getElementById("global2").innerHTML = scoreglobal[1],
+        document.getElementById("round1").innerHTML = score[0],
+        document.getElementById("round2").innerHTML = score[1];
 }
