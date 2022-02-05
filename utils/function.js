@@ -4,6 +4,10 @@ const play = document.getElementById("play");
 const newgame = document.getElementById("newgame");
 const circle1 = document.getElementById("circle1");
 const circle2 = document.getElementById("circle2");
+const round1 = document.getElementById("round1");
+const round2 = document.getElementById("round2");
+const global1 = document.getElementById("global1");
+const global2 = document.getElementById("global2");
 
 /* Classe joueur*/
 class player {
@@ -50,6 +54,9 @@ function getName() {
         if (player1.pseudo == "" || player2.pseudo == "") {
             throw new Error("nom de joueur(s) vide(s)");
         }
+        if ((player1.pseudo).length > 25 || (player2.pseudo).length > 25) {
+            throw new Error("nom de joueur(s) trop long");
+        }
     } catch (Error) {
         window.alert('Les noms de joueurs doivent êtres différents et non vides.')
         return "erreur";
@@ -88,8 +95,13 @@ function rollDice() {
         score[turn] = 0;
 
         turn = turn + 1;
+        circle2.removeAttribute("hidden");
+        circle1.setAttribute("hidden", "hidden");
+
         if (turn == players.length) {
             turn = 0;
+            circle2.setAttribute("hidden", "hidden");
+            circle1.removeAttribute("hidden");
         }
     }
     else {
@@ -97,8 +109,7 @@ function rollDice() {
     }
 
     return document.getElementById("diceNumber").innerHTML = diceNumber,
-        document.getElementById("round1").innerHTML = score[0],
-        document.getElementById("round2").innerHTML = score[1];
+        round1.innerHTML = score[0], round2.innerHTML = score[1];
 }
 
 /* Sauver son score */
@@ -107,18 +118,20 @@ function holdscore() {
     scoreglobal[turn] += score[turn];
 
     if (scoreglobal[turn] >= 100) {
-        return document.getElementById("global1").innerHTML = scoreglobal[0],
-            document.getElementById("global2").innerHTML = scoreglobal[1],
-            window.alert("Vous avez gagné !!!!!!!");
+        return global1.innerHTML = scoreglobal[0], global2.innerHTML = scoreglobal[1],
+            document.getElementById("win").innerHTML = "Vous avez gagné " + String(players[turn].pseudo) + " !!!";
     }
 
     score[turn] = 0;
     turn = turn + 1;
+    circle2.removeAttribute("hidden");
+    circle1.setAttribute("hidden", "hidden");
+
     if (turn == players.length) {
+        circle2.setAttribute("hidden", "hidden");
+        circle1.removeAttribute("hidden");
         turn = 0;
     }
-    return document.getElementById("global1").innerHTML = scoreglobal[0],
-        document.getElementById("global2").innerHTML = scoreglobal[1],
-        document.getElementById("round1").innerHTML = score[0],
-        document.getElementById("round2").innerHTML = score[1];
+    return global1.innerHTML = scoreglobal[0], global2.innerHTML = scoreglobal[1],
+        round1.innerHTML = score[0], round2.innerHTML = score[1];
 }

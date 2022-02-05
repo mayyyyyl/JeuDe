@@ -21,17 +21,18 @@
                     <h4 class="text-white">Les règles du jeu</h4>
                     <p class="text-muted">
                         <br>
-                        Vous possédez deux scores, un score temporaire et un score global
+                        Vous possédez <strong>deux scores</strong>, un score temporaire et un score global
                         <br>
                         Chacun votre tour, vous pourrez lancer le dé autant de fois que vous le souhaitez.<br>
                         <br>
                         À tout moment, vous pouvez envoyer votre score temporaire vers votre score global avec le bouton
-                        SECURISER. Ce sera alors au tour de l’autre joueur.<br>
+                        <strong>SECURISER</strong>. Ce sera alors au tour de l’autre joueur.<br>
                         <br>
-                        Si le lancé obtenu est 1, le score temporaire est perdu et ce sera au tour de votre
+                        Si le lancé obtenu est <strong>1</strong>, le score temporaire est perdu et ce sera au tour de
+                        votre
                         adversaire de jouer.<br>
                         <br>
-                        Le premier à 100 POINTS gagne !<br>
+                        <strong>Le premier à 100 POINTS gagne !</strong><br>
                     </p>
                 </div>
             </div>
@@ -60,6 +61,12 @@
                         <p id=round1></p>
                     </div>
                 </div>
+                <div class="col align-items-end">
+                    <p id=diceNumber></p>
+                    <button class="btn btn-primary" id="roledice">Lancer le dé</button>
+                    <button class="btn btn-primary" id="hold">Sécuriser</button>
+                    <span id="win"></span>
+                </div>
                 <div class="col" id="col1">
                     <div id="circle2"></div>
                     <h2 id="player2"></h2>
@@ -70,15 +77,11 @@
                     </div>
                 </div>
             </div>
-
-            <p id=diceNumber></p>
-            <button class="btn btn-primary" id="roledice">Lancer le dé</button>
-            <button class="btn btn-primary" id="hold">Sécuriser</button>
-
         </div>
-
     </main>
-    <footer></footer>
+    <footer>
+        <p>@Maylis Le Borgne 2022</p>
+    </footer>
     <script src="utils/bootstrap.bundle.min.js"></script>
     <script src="utils/function.js"></script>
 </body>
