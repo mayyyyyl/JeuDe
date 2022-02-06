@@ -8,8 +8,9 @@ const round1 = document.getElementById("round1");
 const round2 = document.getElementById("round2");
 const global1 = document.getElementById("global1");
 const global2 = document.getElementById("global2");
+const win = document.getElementById("win");
 
-/* Classe joueur*/
+/* Classe joueur */
 class player {
     constructor(pseudo) {
         this.pseudo = pseudo
@@ -20,6 +21,11 @@ class player {
 let player1 = new player(this.pseudo);
 let player2 = new player(this.pseudo);
 
+/* Création des constantes */
+let score = [0, 0];
+let scoreglobal = [0, 0];
+let players = [player1, player2];
+let turn = 0;
 
 /* Ecoute des boutons */
 play.addEventListener('click', () => {
@@ -38,7 +44,7 @@ hold.addEventListener('click', () => {
     holdscore();
 });
 
-/* Choisir son nom */
+/* Choisir son pseudo */
 function getName() {
 
     let pseudo_player1 = document.getElementById('player1');
@@ -70,25 +76,28 @@ function getName() {
     circle2.setAttribute("hidden", "hidden");
 }
 
-/* Commencer une nouvelle partie*/
+/* Commencer une nouvelle partie */
 function startNewGame() {
     play.removeAttribute("disabled");
     play.removeAttribute("hidden");
+    roledice.removeAttribute("disabled");
+    hold.removeAttribute("disabled");
     game.setAttribute("hidden", "hidden");
+    score = [0, 0];
+    scoreglobal = [0, 0];
+    delete player2;
+    delete player1;
+    delete holdscore();
+    document.getElementById("diceNumber").innerHTML = null;
+    win.innerHTML = null;
 }
 
-let score = [0, 0];
-let scoreglobal = [0, 0];
-let players = [player1, player2];
-let turn = 0;
-
-
-/* Lancer de dé*/
+/* Lancer de dé */
 function rollDice() {
 
     players[turn];
 
-    diceNumber = Math.floor(Math.random() * 6) + 1;
+    let diceNumber = Math.floor(Math.random() * 6) + 1;
 
     if (diceNumber == 1) {
 
@@ -119,7 +128,8 @@ function holdscore() {
 
     if (scoreglobal[turn] >= 100) {
         return global1.innerHTML = scoreglobal[0], global2.innerHTML = scoreglobal[1],
-            document.getElementById("win").innerHTML = "Vous avez gagné " + String(players[turn].pseudo) + " !!!";
+            win.innerHTML = "Vous avez gagné " + String(players[turn].pseudo) + " !!!",
+            roledice.setAttribute("disabled", "disabled"), hold.setAttribute("disabled", "disabled");
     }
 
     score[turn] = 0;
