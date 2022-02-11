@@ -25,10 +25,16 @@ html, body{
     box-sizing: border-box;
     background-color: #e6e6e6;
 }
-#diceNumber {
-    margin-top: 10rem;
-    font-size: 70px;
-    color: #267B34;
+#middle{
+    flex-grow: inherit;
+    flex-direction: column;
+    align-content: center;
+    margin: 1.5rem;
+    justify-content: space-around;
+}
+.d-inline-flex {
+    align-items: center;
+    margin: 1.5rem;
 }
 #global1, #global2 {
     margin: 0.8rem;
@@ -41,12 +47,13 @@ html, body{
     font-size: 30px;
 }
 .badge {
-    margin: 0.5rem;
-    margin-top: 2.5rem;
+    margin: 2.5rem;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     background-color: #A33B26;
     font-style: oblique;
+    align-items: center;
+    flex-direction: column;
 }
 #player1, #player2 {
     margin: 0.8rem;
@@ -54,20 +61,11 @@ html, body{
     font-size: 4em;
 }
 #circle1, #circle2 {
-        width: 30px;
-        height: 30px;
-        border-radius: 20px;
-        background: #267B34;
-        background-size: 1px;
-        float: left;
-        position: fixed;
-        top: 21.5em;
-}
-#circle1{
-    left: 15em;
-}
-#circle2{
-    left: 70em;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: #267B34;
+    background-size: 1px;
 }
 #win {
     font-size: 2.5rem;
@@ -79,13 +77,13 @@ html, body{
 #play, #newgame{
     margin: 2rem;
     background-color: #A33B26;
-    border-radius:#A33B26;
+    border-color:#A33B26;
     color: rgb(218, 218, 218);
 }
 #roledice, #hold {
-    margin: 1.5rem 3rem;
     background-color: #A33B26;
-    border-radius:#A33B26;
+    border-color:#A33B26;
+    margin:1.8rem;
 }
 #play:hover, #newgame:hover{
     background-color: #267B34;
@@ -93,33 +91,16 @@ html, body{
 }
 #roledice:hover, #hold:hover {
     background-color:#267B34;
-    border-radius:#267B34;
-}
-
-/* Footer */
-footer{
-    margin-top: 2.5rem;
+    border-color:#267B34;
 }
 
 /* Media queries */
 @media (max-width: 1224px) {
-    #diceNumber {
-        margin-top: 4rem;
-        margin-bottom: 3.5rem;
-    }
     #roledice, #hold {
-        margin:1.2rem;
+        margin:0.8rem;
     }
     #win {
         font-size: 1.5rem;
-    }
-    #circle1{
-        left: 5em;
-        top: 21em;
-    }
-    #circle2{
-        left: 35em;
-        top: 21em;
     }
 }
 @media (max-width: 768px) {
@@ -134,9 +115,6 @@ footer{
     #roledice, #hold {
         margin:0.2em;
         margin-bottom: 2rem;
-    }
-    #circle1, #circle2{
-        top: 19.5em;
     }
     #player1, #player2 {
         font-size: 2.5em;
@@ -157,19 +135,8 @@ footer{
         margin-bottom: 2rem;
         padding: 0.4em;
     }
-    #circle1, #circle2{
-        top: 20.5em;
-        width: 20px;
-        height: 20px;
-    }
     #player1, #player2 {
         font-size: 2em;
-    }
-    #circle1{
-        left: 1.5em;
-    }
-    #circle2{
-        left: 18em;
     }
     nav{
         padding: 0.8em;

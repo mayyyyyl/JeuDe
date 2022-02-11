@@ -49,32 +49,38 @@
     </header>
     <main>
         <button class="btn btn-primary btn-lg" id="play">Lancer la partie</button>
-        <div class="container text-center" id=game hidden>
+        <div class="container-fluid text-center" id=game hidden>
             <button class="btn btn-primary btn-lg" id="newgame">Nouvelle partie</button>
             <div class="row">
                 <div class="col">
-                    <div id="circle1"></div>
                     <h2 id="player1"></h2>
-                    <h5 id=global1></h5>
-                    <div class="badge">
+                    <div class="row-sm d-inline-flex">
+                        <h5 id="circle1"></h5>
+                        <h5 id="global1"></h5>
+                    </div>
+                    <div class="d-flex badge">
                         <h5>Courant</h5>
                         <p id=round1></p>
                     </div>
                 </div>
-                <div class="col align-items-end">
-                    <p id=diceNumber></p>
-                    <button class="btn btn-primary" id="roledice">Lancer le dé</button>
-                    <button class="btn btn-primary" id="hold">Sécuriser</button>
+                <div class="col d-flex" id="middle">
+                    <img src="img/dice6.png" alt="dice" id="diceimg">
                 </div>
                 <div class="col" id="col1">
-                    <div id="circle2"></div>
                     <h2 id="player2"></h2>
-                    <h5 id="global2"></h5>
-                    <div class="badge">
+                    <div class="row-sm d-inline-flex">
+                        <h5 id="circle2"></h5>
+                        <h5 id="global2"></h5>
+                    </div>
+                    <div class="d-flex badge">
                         <h5>Courant</h5>
                         <p id=round2></p>
                     </div>
                 </div>
+            </div>
+            <div class="row-sm">
+                <button class="btn btn-primary" id="roledice">Lancer le dé</button>
+                <button class="btn btn-primary" id="hold">Sécuriser</button>
             </div>
         </div>
         <span id="win"></span>

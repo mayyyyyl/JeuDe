@@ -9,6 +9,7 @@ const round2 = document.getElementById("round2");
 const global1 = document.getElementById("global1");
 const global2 = document.getElementById("global2");
 const win = document.getElementById("win");
+const diceimg = document.getElementById("diceimg");
 
 /* Classe joueur */
 class player {
@@ -101,6 +102,7 @@ function rollDice() {
 
     if (diceNumber == 1) {
 
+        diceimg.src = "img/dice1.png";
         score[turn] = 0;
 
         turn = turn + 1;
@@ -114,11 +116,11 @@ function rollDice() {
         }
     }
     else {
+        diceimg.src = `img/dice${diceNumber}.png`
         score[turn] += diceNumber;
     }
 
-    return document.getElementById("diceNumber").innerHTML = diceNumber,
-        round1.innerHTML = score[0], round2.innerHTML = score[1];
+    return round1.innerHTML = score[0], round2.innerHTML = score[1];
 }
 
 /* Sauver son score */
